@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" />
+    <title>OpenStreet Dotted Font</title>
+  </head>
+  <body>
+    <div class="ripple">
+      <span></span>
+    </div>
+    <div class="container">
+      <div class="content">
+        <p class="dotted-text">OPENSTREET</p>
+        <h1 class="title">Invest Smarter, Together</h1>
+        <p class="description">
+          Join OpenStreet, the next-gen investing ecosystem where investors
+          discuss market trends, share insights, and grow together.
+        </p>
+        <form
+          class="email-form"
+          id="waitlist-form"
+          action="https://formspree.io/f/mjkgqnwa"
+          method="POST"
+        >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            class="email-input"
+            required
+          />
+          <span class="error-message" id="error-message"></span>
+          <button type="submit" id="submit-btn" class="submit-button">
+            <span class="button-text">Join Waitlist</span>
+            <span class="loader"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="copyright">© 2025 OpenStreet. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <span class="separator">|</span>
+          <a href="#">Terms of Service</a>
+          <span class="separator">|</span>
+          <a href="#">Community Guidelines</a>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
