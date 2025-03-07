@@ -668,3 +668,433 @@ footer {
 .footer-links a:hover {
   opacity: 0.8;
 }
+
+/* 响应式设计 - 移动端优化 */
+@media (max-width: 768px) {
+  /* 主页标题和布局 */
+  .p1 {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Add spacing between main sections */
+  }
+
+  .open,
+  .street {
+    font-size: clamp(60px, 15vw, 80px);
+    letter-spacing: -3px;
+  }
+
+  .description {
+    font-size: clamp(22px, 6vw, 28px); /* Match "why" section titles */
+    margin-top: 10px;
+    margin-bottom: 20px; /* Add bottom margin */
+    font-weight: 200;
+  }
+
+  .join,
+  .waitlist {
+    font-size: clamp(22px, 6vw, 28px); /* Match "why" section titles */
+    letter-spacing: -1px;
+  }
+
+  .join-container {
+    margin: 5% 0 10% 0; /* Increase bottom margin */
+  }
+
+  .wl-content {
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+    /* Remove align-items: center; as it doesn't apply to non-flex elements */
+  }
+
+  /* Ensure the parent container centers its children */
+  .wl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Make sure nested divs are also centered */
+  .wl > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .bullets-list li {
+    font-size: 16px;
+    margin-bottom: 8px; /* Reduced spacing between bullet points */
+    padding-left: 5px; /* Reduce left padding */
+  }
+
+  .bullets-list li::before {
+    font-size: 22px; /* Smaller bullet point */
+    left: 0;
+    top: -2px; /* Fine tune vertical position */
+  }
+
+  /* Style for the wrapper div around bullets */
+  .wl > div {
+    width: 100%;
+    margin-bottom: 30px; /* Add margin below the entire bullet group */
+  }
+
+  .bullets-container {
+    margin-bottom: 0; /* Remove margin from container since parent handles it */
+  }
+
+  /* Same for the second join section */
+  .page.another-join .wl-content {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+    /* Remove align-items: center; here too */
+  }
+
+  .email-form {
+    flex-direction: row;
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .email-input {
+    width: 70%;
+    height: 50px;
+    font-size: 16px;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .submit-button {
+    width: 30%;
+    height: 50px;
+    border-radius: 0;
+    font-size: 16px;
+  }
+
+  /* 为错误信息留出空间 */
+  .error-message {
+    bottom: -35px;
+    font-size: 14px;
+  }
+
+  /* 内容页面布局 */
+  .why1-container {
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
+  }
+
+  .content-group {
+    width: 100%;
+    text-align: center;
+  }
+
+  .os-why {
+    justify-content: center;
+  }
+
+  .os-why .title {
+    font-size: clamp(22px, 6vw, 28px);
+    text-align: center;
+  }
+
+  .os-description {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* 立方体调整 */
+  .cube-container {
+    width: 150px;
+    height: 150px;
+    margin: 30px auto;
+  }
+
+  .face {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    font-size: 16px;
+  }
+
+  .front {
+    transform: translateZ(75px);
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(75px);
+  }
+
+  .right {
+    transform: rotateY(90deg) translateZ(75px);
+  }
+
+  .left {
+    transform: rotateY(-90deg) translateZ(75px);
+  }
+
+  .top {
+    transform: rotateX(90deg) translateZ(75px);
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translateZ(75px);
+  }
+
+  .cube-container:hover {
+    transform: scale(1.2);
+  }
+
+  /* 故事页面 */
+  .page.story .subtitle {
+    font-size: 32px;
+  }
+
+  .page.story .bullets {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  /* 最后的大标题 */
+  .huge-open,
+  .huge-street {
+    font-size: 18vw;
+    letter-spacing: -0.8vw;
+  }
+
+  /* 页脚 */
+  .footer-content p,
+  .footer-content a,
+  .footer-content .separator {
+    font-size: 16px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  /* 页面布局调整为居中 */
+  .page.why1,
+  .page.why2,
+  .page.why3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .why1-container {
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
+    max-width: 400px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-group {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    order: 0; /* 在所有why页面中，文本始终在上方 */
+  }
+
+  .os-why {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .os-why .title {
+    font-size: clamp(22px, 6vw, 28px);
+    text-align: center;
+    justify-content: center;
+  }
+
+  .os-description {
+    font-size: 16px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .mycube {
+    order: 1; /* 在所有why页面中，立方体始终在下方 */
+    margin: 20px 0;
+  }
+
+  /* 覆盖第三页的特定布局 */
+  .page.why3 .why1-container .mycube {
+    order: 1;
+  }
+
+  .page.why3 .why1-container .content-group {
+    order: 0;
+  }
+
+  /* Make "another-join" page consistent with first page */
+  .page.another-join .join,
+  .page.another-join .waitlist {
+    font-size: clamp(22px, 6vw, 28px);
+    letter-spacing: -1px;
+  }
+
+  .page.another-join .wl-content,
+  .page.another-join .bullets-list li {
+    font-size: 16px;
+  }
+
+  .page.another-join .join-container {
+    margin: 5%;
+  }
+
+  /* Hide huge OPENSTREET text on mobile, keep footer visible */
+  .page.openstreet {
+    justify-content: flex-end;
+    padding-top: 0;
+  }
+
+  .huge-openstreet {
+    display: none;
+  }
+
+  footer {
+    margin-top: 0;
+    width: 100%;
+  }
+}
+
+/* 小屏幕手机优化 */
+@media (max-width: 480px) {
+  .page {
+    padding: 1rem;
+  }
+
+  .open,
+  .street {
+    font-size: clamp(40px, 12vw, 60px);
+  }
+
+  .join-container {
+    flex-direction: row;
+    gap: 5px;
+    margin: 4%;
+  }
+
+  .email-input {
+    height: 45px;
+    font-size: 15px;
+  }
+
+  .submit-button {
+    height: 45px;
+    font-size: 15px;
+  }
+
+  .button-text {
+    font-size: 15px;
+  }
+
+  .cube-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .face {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    font-size: 14px;
+  }
+
+  .front {
+    transform: translateZ(60px);
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(60px);
+  }
+
+  .right {
+    transform: rotateY(90deg) translateZ(60px);
+  }
+
+  .left {
+    transform: rotateY(-90deg) translateZ(60px);
+  }
+
+  .top {
+    transform: rotateX(90deg) translateZ(60px);
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translateZ(60px);
+  }
+
+  /* Consistent styling for another-join section on smaller screens */
+  .page.another-join .join-container {
+    flex-direction: row;
+    gap: 5px;
+    margin: 4%;
+  }
+
+  .p1 {
+    gap: 25px; /* Slightly less spacing for very small screens */
+  }
+
+  .wl > div {
+    margin-bottom: 25px; /* Less margin on small screens */
+  }
+
+  .bullets-list li {
+    margin-bottom: 6px; /* Even tighter spacing on small screens */
+  }
+
+  .bullets-list li::before {
+    font-size: 20px; /* Slightly smaller bullet */
+  }
+
+  /* Further adjustments to footer spacing */
+  .page.openstreet {
+    min-height: auto;
+    height: auto;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+  }
+}
+
+/* 横屏模式优化 */
+@media (max-height: 600px) and (orientation: landscape) {
+  .page {
+    padding: 1rem;
+  }
+
+  .why1-container {
+    flex-direction: row;
+  }
+
+  .join-container {
+    margin: 2%;
+  }
+
+  .bullets-container {
+    margin-bottom: 2%;
+  }
+
+  .page.story .bullets p {
+    margin-bottom: 1rem;
+  }
+}
