@@ -202,7 +202,8 @@ body {
 .bullets-list li {
   position: relative;
   padding-left: 27px;
-  margin-bottom: 10 px;
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
   color: #fff;
   font-family: "Inter", sans-serif;
   font-size: 27px;
@@ -212,12 +213,16 @@ body {
   letter-spacing: -7%;
 }
 .bullets-list li::before {
-  content: "•";
+  content: ""; /* 移除文本内容 */
   position: absolute;
   left: 0;
-  color: #b4ed76;
-  font-size: 27px;
-  line-height: 1;
+  top: 0.25em; /* 根据行高调整垂直位置 */
+  width: 16px; /* 设置图片宽度 */
+  height: 16px; /* 设置图片高度 */
+  background-image: url("marker.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .email-form {
   display: flex;
@@ -552,15 +557,15 @@ body {
 
 .page.story {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: flex-end; /* Right align all content */
-  padding: 5vh 5vw;
-  text-align: right;
+  padding: 7vh 7vw;
+  /* text-align: center; */
 }
 
 .page.story .subtitle {
   color: #b4ed76;
-  text-align: right;
+  /* text-align: center; */
   font-family: "Inter", sans-serif;
   font-size: 48px;
   font-style: normal;
@@ -572,7 +577,7 @@ body {
 
 .page.story .bullets {
   color: #fff;
-  text-align: right;
+  /* text-align: center; */
   font-family: "Inter", sans-serif;
   font-size: 30px;
   font-style: normal;
@@ -701,7 +706,10 @@ footer {
   .join-container {
     margin: 5% 0 10% 0; /* Increase bottom margin */
   }
-
+  .bullets-list {
+    width: fit-content;
+    margin: 0 auto; /* 居中对齐 */
+  }
   .wl-content {
     font-size: 16px;
     text-align: center;
@@ -719,36 +727,43 @@ footer {
   }
 
   /* Make sure nested divs are also centered */
-  .wl > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 30px;
-  }
 
   .bullets-list li {
+    display: flex;
     font-size: 16px;
-    margin-bottom: 8px; /* Reduced spacing between bullet points */
-    padding-left: 5px; /* Reduce left padding */
+    padding-left: 24px;
+    text-align: left;
+    width: max-content;
+    position: relative;
+    align-items: center;
   }
 
   .bullets-list li::before {
-    font-size: 22px; /* Smaller bullet point */
-    left: 0;
-    top: -2px; /* Fine tune vertical position */
+    top: 0.2em; /* 调整移动设备上的垂直位置 */
+    width: 14px; /* 稍小一点的尺寸 */
+    height: 14px;
+    background-image: url("marker.png");
+    background-size: contain;
   }
 
   /* Style for the wrapper div around bullets */
   .wl > div {
-    width: 100%;
-    margin-bottom: 30px; /* Add margin below the entire bullet group */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content; /* 自动适应内容宽度 */
+    max-width: 90%; /* 防止在超小屏幕上溢出 */
+    margin: 0 auto 30px auto;
   }
 
   .bullets-container {
-    margin-bottom: 0; /* Remove margin from container since parent handles it */
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 20px;
   }
-
   /* Same for the second join section */
   .page.another-join .wl-content {
     text-align: center;
