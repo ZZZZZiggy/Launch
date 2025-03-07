@@ -6,7 +6,15 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <link href="styles.css" rel="stylesheet" />
+    <!-- Add meta tags to prevent caching -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- Use cache-busting parameter with timestamp -->
+    <link href="styles.css?v=<?php echo time(); ?>" rel="stylesheet" />
     <title>OpenStreet</title>
   </head>
   <body>

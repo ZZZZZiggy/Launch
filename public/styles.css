@@ -216,7 +216,8 @@ body {
   content: ""; /* 移除文本内容 */
   position: absolute;
   left: 0;
-  top: 0.25em; /* 根据行高调整垂直位置 */
+  top: 50%; /* 将元素顶部定位到父元素的垂直中心 */
+  transform: translateY(-50%);
   width: 16px; /* 设置图片宽度 */
   height: 16px; /* 设置图片高度 */
   background-image: url("marker.png");
@@ -739,7 +740,8 @@ footer {
   }
 
   .bullets-list li::before {
-    top: 0.2em; /* 调整移动设备上的垂直位置 */
+    top: 50%; /* 将元素顶部定位到父元素的垂直中心 */
+    transform: translateY(-50%);
     width: 14px; /* 稍小一点的尺寸 */
     height: 14px;
     background-image: url("marker.png");

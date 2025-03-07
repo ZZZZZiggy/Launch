@@ -65,3 +65,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// Add cache-busting functionality
+document.addEventListener("DOMContentLoaded", function () {
+  // Force reload of CSS if mobile view detection
+  if (window.innerWidth <= 768) {
+    const links = document.getElementsByTagName("link");
+    for (let i = 0; i < links.length; i++) {
+      if (links[i].rel === "stylesheet") {
+        const href = links[i].href;
+        links[i].href =
+          href +
+          (href.indexOf("?") >= 0 ? "&" : "?") +
+          "v=" +
+          new Date().getTime();
+      }
+    }
+  }
+
+  // Add event handlers for forms
+  const forms = document.querySelectorAll("form.email-form");
+  forms.forEach((form) => {
+    form.addEventListener("submit", function (e) {
+      const button = form.querySelector(".submit-button");
+      button.classList.add("loading");
+    });
+  });
+});
