@@ -182,6 +182,7 @@ body {
   font-weight: 200;
   line-height: normal;
   letter-spacing: -8%;
+  margin-bottom: 20px;
 }
 
 .bullets-container {
@@ -202,8 +203,8 @@ body {
 .bullets-list li {
   position: relative;
   padding-left: 27px;
-  /* margin-top: 10px;
-  margin-bottom: 10px; */
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #fff;
   font-family: "Inter", sans-serif;
   font-size: 27px;
@@ -232,6 +233,7 @@ body {
   width: 100%;
   max-width: 420px;
   margin-bottom: 30px;
+  margin-top: 15px;
   /* margin: 20 auto; */
   position: relative;
 }
@@ -423,8 +425,8 @@ body {
   justify-content: center;
 }
 .cube-container {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   perspective: 800px;
   margin: 50px auto;
   transition: 0.8s ease-out;
@@ -432,7 +434,7 @@ body {
 }
 
 .cube-container:hover {
-  transform: scale(1.5); /* 悬停时稍微放大 */
+  transform: scale(1.2); /* 悬停时稍微放大 */
 }
 
 .cube {
@@ -455,12 +457,12 @@ body {
     )
     1;
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   color: white;
   font-size: 18px;
   text-align: center;
-  line-height: 200px;
+  line-height: 160px;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid;
   border-image: var(--french);
@@ -468,27 +470,27 @@ body {
 }
 
 .front {
-  transform: translateZ(100px);
+  transform: translateZ(80px);
 }
 
 .back {
-  transform: rotateY(180deg) translateZ(100px);
+  transform: rotateY(180deg) translateZ(80px);
 }
 
 .right {
-  transform: rotateY(90deg) translateZ(100px);
+  transform: rotateY(90deg) translateZ(80px);
 }
 
 .left {
-  transform: rotateY(-90deg) translateZ(100px);
+  transform: rotateY(-90deg) translateZ(80px);
 }
 
 .top {
-  transform: rotateX(90deg) translateZ(100px);
+  transform: rotateX(90deg) translateZ(80px);
 }
 
 .bottom {
-  transform: rotateX(-90deg) translateZ(100px);
+  transform: rotateX(-90deg) translateZ(80px);
 }
 
 @keyframes rotate {
@@ -692,7 +694,7 @@ footer {
   }
 
   .description {
-    font-size: clamp(22px, 6vw, 28px); /* Match "why" section titles */
+    font-size: clamp(20px, 6vw, 24px); /* Match "why" section titles */
     margin-top: 10px;
     margin-bottom: 20px; /* Add bottom margin */
     font-weight: 200;
@@ -700,7 +702,7 @@ footer {
 
   .join,
   .waitlist {
-    font-size: clamp(22px, 6vw, 28px); /* Match "why" section titles */
+    font-size: clamp(20px, 6vw, 24px); /* Match "why" section titles */
     letter-spacing: -1px;
   }
 
@@ -715,7 +717,7 @@ footer {
     font-size: 16px;
     text-align: center;
     width: 100%;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     /* Remove align-items: center; as it doesn't apply to non-flex elements */
   }
 
@@ -770,7 +772,7 @@ footer {
   .page.another-join .wl-content {
     text-align: center;
     width: 100%;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     /* Remove align-items: center; here too */
   }
 
@@ -778,6 +780,8 @@ footer {
     flex-direction: row;
     width: 90%;
     max-width: 280px;
+    margin-top: 5px; /* Reduce top margin on mobile */
+    margin-bottom: 40px; /* Increase bottom margin for error messages */
   }
 
   .email-input {
@@ -829,15 +833,15 @@ footer {
 
   /* 立方体调整 */
   .cube-container {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     margin: 30px auto;
   }
 
   .face {
-    width: 150px;
-    height: 150px;
-    line-height: 150px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
     font-size: 16px;
   }
 
@@ -978,6 +982,16 @@ footer {
     margin: 5%;
   }
 
+  .page.another-join .email-form {
+    margin-top: 5px;
+    margin-bottom: 40px;
+  }
+
+  .page.another-join .wl-content {
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+
   /* Hide huge OPENSTREET text on mobile, keep footer visible */
   .page.openstreet {
     justify-content: flex-end;
@@ -991,6 +1005,67 @@ footer {
   footer {
     margin-top: 0;
     width: 100%;
+  }
+  .circleloader {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circle::before {
+    width: 14px;
+    height: 14px;
+    top: -7px;
+  }
+
+  .middle-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .middle-circle::before {
+    width: 12px;
+    height: 12px;
+    top: -6px;
+  }
+
+  .outer-circle {
+    width: 240%;
+    height: 140px;
+  }
+
+  .outer-circle::before {
+    width: 10px;
+    height: 10px;
+    top: -5px;
+  }
+
+  /* 硬币移动端样式 */
+  .coin {
+    font-size: 100px;
+    margin: 30px auto 0;
+    order: 1; /* 将硬币放在内容下方 */
+  }
+
+  /* 在why容器中调整硬币位置 */
+  .why1-container .coin {
+    order: 1;
+  }
+
+  .why1-container .content-group {
+    order: 0;
+  }
+}
+
+/* 小屏幕手机进一步缩小 */
+@media (max-width: 480px) {
+  .circleloader {
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -1011,6 +1086,11 @@ footer {
     margin: 4%;
   }
 
+  .email-form {
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
+
   .email-input {
     height: 45px;
     font-size: 15px;
@@ -1026,39 +1106,39 @@ footer {
   }
 
   .cube-container {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 
   .face {
-    width: 120px;
-    height: 120px;
-    line-height: 120px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
     font-size: 14px;
   }
 
   .front {
-    transform: translateZ(60px);
+    transform: translateZ(50px);
   }
 
   .back {
-    transform: rotateY(180deg) translateZ(60px);
+    transform: rotateY(180deg) translateZ(50px);
   }
 
   .right {
-    transform: rotateY(90deg) translateZ(60px);
+    transform: rotateY(90deg) translateZ(50px);
   }
 
   .left {
-    transform: rotateY(-90deg) translateZ(60px);
+    transform: rotateY(-90deg) translateZ(50px);
   }
 
   .top {
-    transform: rotateX(90deg) translateZ(60px);
+    transform: rotateX(90deg) translateZ(50px);
   }
 
   .bottom {
-    transform: rotateX(-90deg) translateZ(60px);
+    transform: rotateX(-90deg) translateZ(50px);
   }
 
   /* Consistent styling for another-join section on smaller screens */
@@ -1076,6 +1156,10 @@ footer {
     margin-bottom: 25px; /* Less margin on small screens */
   }
 
+  .wl-content {
+    margin-bottom: 8px;
+  }
+
   .bullets-list li {
     margin-bottom: 6px; /* Even tighter spacing on small screens */
   }
@@ -1090,6 +1174,34 @@ footer {
     height: auto;
     padding-top: 10vh;
     padding-bottom: 5vh;
+    .circleloader {
+      width: 100px;
+      height: 100px;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+    }
+
+    .middle-circle {
+      width: 60px;
+      height: 60px;
+    }
+
+    .outer-circle {
+      width: 240%;
+      height: 140px;
+    }
+
+    .coin {
+      font-size: 80px;
+    }
+  }
+
+  .bullets-container {
+    margin-top: 5px;
+    margin-bottom: 10px;
   }
 }
 
@@ -1113,5 +1225,283 @@ footer {
 
   .page.story .bullets p {
     margin-bottom: 1rem;
+  }
+}
+
+.coin {
+  font-size: 200px;
+  width: 0.1em;
+  height: 1em;
+  background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0px,
+      rgba(0, 0, 0, 0.3) 1px,
+      rgba(0, 0, 0, 0) 3px
+    ),
+    linear-gradient(#b4ed76, #141001);
+  margin: auto;
+  animation: rotate_4001510 7s infinite linear;
+  transform-style: preserve-3d;
+}
+
+.coin .side,
+.coin:before,
+.coin:after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  border-radius: 50%;
+  right: -0.4em;
+  text-align: center;
+  line-height: 1;
+  transform: rotateY(-90deg);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.coin .tails,
+.coin:after {
+  left: -0.4em;
+  transform: rotateY(90deg);
+}
+
+.coin:before,
+.coin:after {
+  /* 使用多重背景，叠加线性渐变和扫描线 */
+  background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0px,
+      /* 更强的对比度 */ rgba(0, 0, 0, 0.3) 1px,
+      /* 更细的线 */ rgba(0, 0, 0, 0) 3px /* 更密集的间距 */
+    ),
+    linear-gradient(#b4ed76, #141001);
+
+  backface-visibility: hidden;
+  transform: rotateY(90deg);
+}
+
+.coin:after {
+  transform: rotateY(-90deg);
+}
+
+@keyframes rotate_4001510 {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.svg_back {
+  transform: scaleX(-1);
+}
+
+/* 硬币正反面的 SVG 也加扫描线 */
+.coin .side::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0px,
+    /* 更强的对比度 */ rgba(0, 0, 0, 0.3) 1px,
+    /* 更细的线 */ rgba(0, 0, 0, 0) 3px /* 更密集的间距 */
+  );
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 添加额外的环境光晕 */
+.coin {
+  box-shadow: 0 0 80px rgba(180, 237, 118, 0.3);
+}
+
+.circleloader {
+  background: transparent;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* 内圈 - 始终可见 */
+.circle {
+  width: 160px;
+  height: 160px;
+  border: 2px solid #ccc;
+  position: absolute;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #9ae932;
+  box-shadow: 0 0 20px #9ae932, 0 0 60px #9ae932;
+}
+
+/* 中圈 - hover时可见 */
+.middle-circle {
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(154, 233, 50, 0.6);
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: spin 3s linear infinite;
+}
+
+/* 中圈小球 */
+.middle-circle::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(154, 233, 50, 0.7);
+  box-shadow: 0 0 15px rgba(154, 233, 50, 0.7), 0 0 45px rgba(154, 233, 50, 0.5);
+}
+
+/* 外圈 - hover时可见 */
+.outer-circle {
+  width: 240%;
+  height: 240px;
+  border: 2px solid rgba(154, 233, 50, 0.3);
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: spin 4s linear infinite;
+}
+
+/* 外圈小球 */
+.outer-circle::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(154, 233, 50, 0.4);
+  box-shadow: 0 0 10px rgba(154, 233, 50, 0.4), 0 0 30px rgba(154, 233, 50, 0.3);
+}
+
+/* Hover状态 */
+.circleloader:hover .middle-circle,
+.circleloader:hover .outer-circle {
+  opacity: 1;
+}
+
+.circleloader:hover {
+  transform: scale(1.05);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile optimizations for the coin and circle components */
+@media (max-width: 768px) {
+  /* Circle adjustments */
+  .circleloader {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+    transform: scale(0.8); /* Scale down slightly */
+  }
+
+  .circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .middle-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .outer-circle {
+    width: 240%;
+    height: 160px;
+  }
+
+  /* Ensure the coin is visible on mobile */
+  .coin {
+    font-size: 120px;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    transform-origin: center;
+    z-index: 10; /* Ensure it's above other elements */
+  }
+
+  /* Make the coin container have proper dimensions */
+  .why1-container .coin,
+  .why3 .coin {
+    width: 12px; /* 0.1em at 120px font size */
+    height: 120px; /* 1em at 120px font size */
+    margin: 30px auto;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even smaller for very small phones */
+  .circleloader {
+    width: 120px;
+    height: 120px;
+    transform: scale(0.7);
+  }
+
+  .circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .middle-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .outer-circle {
+    width: 240%;
+    height: 160px;
+  }
+
+  .coin {
+    font-size: 120px;
+  }
+
+  .why1-container .coin,
+  .why3 .coin {
+    width: 12px; /* 0.1em at 80px font size */
+    height: 120px; /* 1em at 80px font size */
   }
 }
