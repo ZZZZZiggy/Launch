@@ -1256,7 +1256,7 @@ footer {
 
 .coin {
   font-size: 200px;
-  width: 0.1em;
+  width: 1em;
   height: 1em;
   background: repeating-linear-gradient(
       to bottom,
