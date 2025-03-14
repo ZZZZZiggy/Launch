@@ -1,3 +1,30 @@
+// Calculate the "real" viewport height and set it as a CSS variable
+function setViewportHeight() {
+  // Get the viewport height
+  let vh = window.innerHeight * 0.01;
+  // Set the value as a CSS custom property
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+
+// Initial call
+setViewportHeight();
+
+// Update on resize and orientation change
+window.addEventListener("resize", setViewportHeight);
+window.addEventListener("orientationchange", setViewportHeight);
+
+// On some mobile browsers, the address bar can hide/show on scroll,
+// recalculate on scroll events too
+window.addEventListener("scroll", () => {
+  // Use debounce to prevent excessive calculations
+  if (!window.scrollDebounce) {
+    window.scrollDebounce = setTimeout(() => {
+      setViewportHeight();
+      window.scrollDebounce = null;
+    }, 200);
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const forms = document.querySelectorAll(".email-form");
 

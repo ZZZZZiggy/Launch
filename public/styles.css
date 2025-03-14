@@ -7,6 +7,7 @@
   --l: 24px;
 
   --margin: 10px;
+  --vh: 1vh; /* Fallback, will be updated by JavaScript */
 }
 
 * {
@@ -28,14 +29,16 @@ body {
 }
 
 .main-container {
-  height: 100vh;
+  height: 100vh; /* Fallback */
+  height: calc(var(--vh, 1vh) * 100);
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
 .page {
-  min-height: 100vh;
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -599,6 +602,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 5vh 2vw; /* Add padding top and bottom */
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 
 .huge-openstreet {
@@ -608,6 +612,7 @@ body {
   width: 100%;
   line-height: 0.8;
   margin-top: 5vh; /* Add margin from top */
+  height: auto; /* Let content determine height rather than viewport */
 }
 
 .huge-open {
@@ -686,7 +691,14 @@ footer {
     flex-direction: column;
     gap: 30px; /* Add spacing between main sections */
   }
-
+  .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
   .open,
   .street {
     font-size: clamp(60px, 15vw, 80px);
@@ -714,11 +726,12 @@ footer {
     margin: 0 auto; /* 居中对齐 */
   }
   .wl-content {
-    font-size: 16px;
+    font-size: 20px; /* Increased from 16px */
     text-align: center;
     width: 100%;
-    /* margin-bottom: 15px; */
-    /* Remove align-items: center; as it doesn't apply to non-flex elements */
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-weight: 300; /* Slightly bolder for better readability */
   }
 
   /* Ensure the parent container centers its children */
@@ -770,10 +783,11 @@ footer {
   }
   /* Same for the second join section */
   .page.another-join .wl-content {
+    font-size: 20px; /* Increased from 16px */
     text-align: center;
     width: 100%;
-    /* margin-bottom: 15px; */
-    /* Remove align-items: center; here too */
+    margin-bottom: 10px;
+    margin-top: 5px;
   }
 
   .email-form {
@@ -1074,7 +1088,14 @@ footer {
   .page {
     padding: 1rem;
   }
-
+  .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
   .open,
   .street {
     font-size: clamp(40px, 12vw, 60px);
@@ -1157,7 +1178,12 @@ footer {
   }
 
   .wl-content {
+    font-size: 18px; /* Still larger than before, but adjusted for smaller screens */
     margin-bottom: 8px;
+  }
+
+  .page.another-join .wl-content {
+    font-size: 18px;
   }
 
   .bullets-list li {
@@ -1503,5 +1529,13 @@ footer {
   .why3 .coin {
     width: 12px; /* 0.1em at 80px font size */
     height: 120px; /* 1em at 80px font size */
+  }
+}
+
+/* For situations where full-height might cause issues on very small screens */
+@media (max-height: 500px) {
+  .page {
+    min-height: auto;
+    padding: 3rem 0;
   }
 }
