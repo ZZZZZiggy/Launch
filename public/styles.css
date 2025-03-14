@@ -1485,7 +1485,33 @@ footer {
     transform-origin: center;
     z-index: 10; /* Ensure it's above other elements */
   }
+  /* Fix the side positioning - this is key for correct back face display */
+  .coin .side {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d; /* Critical for 3D rendering */
+  }
 
+  /* Ensure proper placement of heads and tails */
+  .coin .heads {
+    right: -0.4em;
+    transform: rotateY(-90deg);
+  }
+
+  .coin .tails {
+    left: -0.4em;
+    transform: rotateY(90deg);
+  }
+
+  /* Ensure SVG elements maintain aspect ratio and don't overflow */
+  .coin .side svg {
+    width: 100%;
+    height: 100%;
+  }
   /* Make the coin container have proper dimensions */
   .why1-container .coin,
   .why3 .coin {
