@@ -1174,7 +1174,7 @@ footer {
   }
 
   .wl > div {
-    margin-bottom: 25px; /* Less margin on small screens */
+    margin-bottom: 10px; /* Less margin on small screens */
   }
 
   .wl-content {
