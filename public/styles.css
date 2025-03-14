@@ -1174,7 +1174,7 @@ footer {
   }
 
   .wl > div {
-    margin-bottom: 10px; /* Less margin on small screens */
+    margin-bottom: px; /* Less margin on small screens */
   }
 
   .wl-content {
@@ -1256,7 +1256,7 @@ footer {
 
 .coin {
   font-size: 200px;
-  width: 1em;
+  width: 0.1em;
   height: 1em;
   background: repeating-linear-gradient(
       to bottom,
